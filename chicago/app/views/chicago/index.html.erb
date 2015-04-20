@@ -1,0 +1,10 @@
+<ul>
+
+  <% @places.each do |place| %>
+    <li>
+      <%= link_to place.title, "chicago/#{place.id}" %>
+      (<%= number_to_currency place.price / 100.0 %>)
+    </li>
+  <% end %>
+
+</ul>
