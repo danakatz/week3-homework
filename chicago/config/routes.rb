@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
-  root 'chicago#index'
+  get '/places' => 'places#index'
 
 end
