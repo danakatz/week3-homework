@@ -1,5 +1,3 @@
-# Place.delete_all
-
 [{:title => "Willis Tower",
   :photo_url => "http://msnbcmedia.msn.com/i/MSNBC/Components/Photo/_new/100706-travel-chicagoskyline-hmed-1120a.jpg",
   :price => 1950, :description => "Tallest building in Chicago."},
