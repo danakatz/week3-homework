@@ -1,4 +1,4 @@
-Place.delete_all
+# Place.delete_all
 
 [{:title => "Willis Tower",
   :photo_url => "http://msnbcmedia.msn.com/i/MSNBC/Components/Photo/_new/100706-travel-chicagoskyline-hmed-1120a.jpg",
@@ -16,12 +16,12 @@ Place.delete_all
   :photo_url => "http://media-cdn.tripadvisor.com/media/photo-s/05/4c/60/4b/shedd-aquarium.jpg",
   :price => 3500, :description => "You can watch them feed the sharks!"}
 ].each do |place_hash|
-  p = Place.new
-  p.title = place_hash[:title]
-  p.photo_url = place_hash[:photo_url]
-  p.price = place_hash[:price]
-  p.description = place_hash[:description]
-  p.save
+  Place.find_or_create_by(:title => place_hash[:title]) do |p|
+    p.title = place_hash[:title]
+    p.photo_url = place_hash[:photo_url]
+    p.price = place_hash[:price]
+    p.description = place_hash[:description]
+  end
 end
 
 # This file should contain all the record creation needed to seed the database with its default values.
