@@ -10,7 +10,7 @@
     border: solid 2px green;
     padding: 6px;
   }
-  img {
+  .place_img {
     float: left;
     margin-right: 40px;
     box-shadow: 8px 8px 4px gray;
@@ -30,8 +30,26 @@
     <%= link_to 'Edit', "/places/#{@place.id}/edit" %>
 </p>
 
-<%= image_tag @place.photo_url %>
+<%= image_tag @place.photo_url, class: "place_img" %>
 <%= @place.description %>
 
-<h3>Reviews</h3>
-Write a review
+<form action=<%= "/places/#{@place.id}/review/" %>>
+
+  <h3>Reviews</h3>
+  Write a review
+  <p>Stars: <%= select_tag "stars", "<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></p>
+  <p>Title: <%= text_field_tag "title" %></p>
+  Review:<br />
+  <%= text_area_tag "body", nil, rows: 4, cols: 50 %><p>
+  <%= button_tag "Submit" %>
+
+</form>
+
+<% @reviews.each do |review| %>
+  <% (1..review.stars).each do |star| %>
+    <%= image_tag "https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/star.png", size: "12x12" %>
+  <% end %>
+  <strong><%= review.title %></strong> 
+  <br />
+  <%= review.body %><p>
+<% end %>
