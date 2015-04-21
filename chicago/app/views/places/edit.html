@@ -1,0 +1,12 @@
+<h3>Edit a Place</h3>
+
+<%= form_tag "/places/#{@place.id}/update", method: "get" do %>
+
+  <p>Title: <%= text_field_tag "title", @place.title %></p>
+  <p>Photo URL: <%= text_field_tag "photo_url", @place.photo_url %></p>
+  <p>Price: <%= text_field_tag "price", number_to_currency(@place.price / 100.0) %></p>
+  <p>Description:</p>
+  <%= text_area_tag "description", @place.description, rows: 4, cols: 50 %><p>
+  <%= button_tag "Submit" %>
+
+<% end %>

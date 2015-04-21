@@ -27,6 +27,7 @@
 <p>
   <span class="price">Admission:
     <%= number_to_currency @place.price / 100.0 %></span>
+    <%= link_to 'Edit', "/places/#{@place.id}/edit" %>
 </p>
 
 <%= image_tag @place.photo_url %>

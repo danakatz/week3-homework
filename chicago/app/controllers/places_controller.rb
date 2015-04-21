@@ -26,4 +26,20 @@ class PlacesController < ApplicationController
     redirect_to "/places"
   end
 
+  def edit
+    @place = Place.find_by_id(params[:id])
+  end
+
+  def update
+
+    place = Place.find_by_id(params[:id])
+    place.title = params[:title]
+    place.photo_url = params[:photo_url]
+    place.price = params[:price].tr('$', '').to_f * 100
+    place.description = params[:description]
+
+    place.save
+    redirect_to "/places/#{params[:id]}"
+  end
+
 end
