@@ -1,6 +1,6 @@
 <h3>Add a New Place</h3>
 
-<%= form_tag '/places/create', method: "get" do %>
+<form action='/places/create'>
 
   <p>Title: <%= text_field_tag "title" %></p>
   <p>Photo URL: <%= text_field_tag "photo_url" %></p>
@@ -9,4 +9,4 @@
   <%= text_area_tag "description", nil, rows: 4, cols: 50 %><p>
   <%= button_tag "Submit" %>
 
-<% end %>
+</form>

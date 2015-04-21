@@ -1,6 +1,6 @@
 <h3>Edit a Place</h3>
 
-<%= form_tag "/places/#{@place.id}/update", method: "get" do %>
+<form action=<%= "/places/#{@place.id}/update" %>>
 
   <p>Title: <%= text_field_tag "title", @place.title %></p>
   <p>Photo URL: <%= text_field_tag "photo_url", @place.photo_url %></p>
@@ -9,4 +9,4 @@
   <%= text_area_tag "description", @place.description, rows: 4, cols: 50 %><p>
   <%= button_tag "Submit" %>
 
-<% end %>
+</form>
