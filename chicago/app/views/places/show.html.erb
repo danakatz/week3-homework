@@ -21,13 +21,12 @@
     padding: 10px
   }
   p {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 </style>
 
 <h2><%= @place.title %></h2>
-
 <p>
   <span class="price">Admission:
     <%= number_to_currency @place.price / 100.0 %></span>
