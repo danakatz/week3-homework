@@ -8,7 +8,13 @@ Place.delete_all
   :price => 0, :description => "Beautiful outdoor spaces."},
 {:title => "Symphony Center",
   :photo_url => "http://www.grandinhood.com/books/symphony/symphony2.jpg",
-  :price => 7500, :description => "The best classical music."}
+  :price => 7500, :description => "The best classical music."},
+{:title => "Museum of Contemporary Art",
+  :photo_url => "https://musicrowgirl.files.wordpress.com/2014/07/museum-of-contemporary-art.jpg",
+  :price => 1200, :description => "One of the greatest gift shops anywhere."},
+{:title => "Shedd Aquarium",
+  :photo_url => "http://media-cdn.tripadvisor.com/media/photo-s/05/4c/60/4b/shedd-aquarium.jpg",
+  :price => 3500, :description => "You can watch them feed the sharks!"}
 ].each do |place_hash|
   p = Place.new
   p.title = place_hash[:title]
