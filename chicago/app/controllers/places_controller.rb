@@ -14,4 +14,16 @@ class PlacesController < ApplicationController
     redirect_to "/places"
   end
 
+  def create
+    place = Place.new
+
+    place.title = params[:title]
+    place.photo_url = params[:photo_url]
+    place.price = params[:price].tr('$', '').to_f * 100
+    place.description = params[:description]
+
+    place.save
+    redirect_to "/places"
+  end
+
 end
